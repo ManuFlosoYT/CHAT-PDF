@@ -25,6 +25,8 @@ namespace CHAT_PDF
             if (pdfFiles.Count == 0)
             {
                 Console.WriteLine("No se encontraron archivos PDF en este directorio.");
+                Console.WriteLine("Presiona cualquier tecla para salir...");
+                Console.ReadKey();
                 Environment.Exit(0);    // Salir del programa
             }
             Console.WriteLine($"Se encontraron {pdfFiles.Count} archivos PDF:");

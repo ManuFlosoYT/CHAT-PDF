@@ -44,11 +44,15 @@ namespace CHAT_PDF
                 {
                     File.WriteAllText(apiKeyFilePath, string.Empty); // Crea un archivo vacío
                     Console.WriteLine("Archivo 'api_key.secret' creado exitosamente. Por favor, agrega tu API Key en este archivo.");
+                    Console.WriteLine("Presiona cualquier tecla para salir...");
+                    Console.ReadKey();
                     Environment.Exit(0);    // Salir del programa
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine($"Error al crear el archivo 'api_key.secret': {ex.Message}");
+                    Console.WriteLine("Presiona cualquier tecla para salir...");
+                    Console.ReadKey();
                     Environment.Exit(-1);    // Salir del programa
                 }
             }
@@ -60,6 +64,8 @@ namespace CHAT_PDF
             {
                 Directory.CreateDirectory(docsDirectory);
                 Console.WriteLine($"Directorio 'docs' creado en: {docsDirectory}, copia los documentos al directorio.");
+                Console.WriteLine("Presiona cualquier tecla para salir...");
+                Console.ReadKey();
                 Environment.Exit(0);    // Salir del programa
             }
         }
@@ -74,12 +80,16 @@ namespace CHAT_PDF
                     if (string.IsNullOrWhiteSpace(_apiKey))
                     {
                         Console.WriteLine("El archivo 'api_key.secret' está vacío. Por favor, agrega tu API Key.");
+                        Console.WriteLine("Presiona cualquier tecla para salir...");
+                        Console.ReadKey();
                         Environment.Exit(0);    // Salir del programa
                     }
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine($"Error al leer el archivo 'api_key.secret': {ex.Message}");
+                    Console.WriteLine("Presiona cualquier tecla para salir...");
+                    Console.ReadKey();
                     Environment.Exit(-2);    // Salir del programa
                 }
             }
@@ -93,6 +103,8 @@ namespace CHAT_PDF
             if (string.IsNullOrWhiteSpace(combinedText))
             {
                 Console.WriteLine("No se pudo extraer texto de ningún PDF.");
+                Console.WriteLine("Presiona cualquier tecla para salir...");
+                Console.ReadKey();
                 Environment.Exit(-3);    // Salir del programa
             }
             return combinedText;

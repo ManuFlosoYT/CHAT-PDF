@@ -46,16 +46,22 @@ namespace CHAT_PDF
                 {
                     Console.WriteLine($"\nError de red al llamar a la API de Gemini: {httpEx.Message}");
                     if (httpEx.StatusCode.HasValue) Console.WriteLine($"Código de estado: {httpEx.StatusCode}");
+                    Console.WriteLine("Presiona cualquier tecla para salir...");
+                    Console.ReadKey();
                     Environment.Exit(-4);    // Salir del programa
                 }
                 catch (JsonException jsonEx)
                 {
                     Console.WriteLine($"\nError al procesar la respuesta JSON de Gemini: {jsonEx.Message}");
+                    Console.WriteLine("Presiona cualquier tecla para salir...");
+                    Console.ReadKey();
                     Environment.Exit(-5);    // Salir del programa
                 }
                 catch (Exception ex) // Captura cualquier otro error inesperado
                 {
                     Console.WriteLine($"\nOcurrió un error inesperado: {ex.Message}");
+                    Console.WriteLine("Presiona cualquier tecla para salir...");
+                    Console.ReadKey();
                     Environment.Exit(-6);    // Salir del programa
                 }
             }

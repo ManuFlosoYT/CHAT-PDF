@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CHAT-PDF": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
